@@ -11,14 +11,16 @@ const Board = () => {
 
     
     let board = [];
-    let squarecolor = true;
+    let squarecolor = false;
 
     // initialize board
-    horizontalAxis.forEach(i => {
-        verticalAxis.forEach(j => {
+    verticalAxis.reverse().forEach(i => {
+        board.push({location: i, color: "clear"});
+        horizontalAxis.forEach(j => {
             let boardSquare = {
-                color: "white", //refactor to 0 or 1?
+                color: "white",
                 location: "", // ex: a6, b8
+                piece: ""
             };
             boardSquare.location = i + j;
             if (squarecolor) {
@@ -41,6 +43,11 @@ const Board = () => {
             {board.map(square => (
                 <div className={square.color}> {square.location} </div>
             ))}
+            {/* empty div for grid layout */}
+            <div></div>
+            {horizontalAxis.map( label =>
+                <div className="clear"> {label} </div>
+            )}
         </div>
     );
 }

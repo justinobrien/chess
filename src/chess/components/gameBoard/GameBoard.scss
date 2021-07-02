@@ -5,14 +5,14 @@
     background: brown;
     display: grid;
     grid-gap: 0;
-    grid-template-columns: repeat(8, [col] 3em);
-    grid-template-rows: repeat(8, [row] 3em);
+    grid-template-columns: repeat(9, [col] 3em);
+    grid-template-rows: repeat(9, [row] 3em);
 
     justify-content: center;
     align-content: center;
 }
 
-.white, .black {
+.white, .black, .clear {
     display: flex;
     justify-content: center;
     align-items: center;
